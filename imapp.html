@@ -8,9 +8,6 @@
     <!-- Add the Google Maps API script with your API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXFtb0x2bhTvxKascBagjUMDDSowPyj8s&callback=initMap" async defer></script>
 
-    <!-- Add your Font Awesome kit script -->
- 
-
     <!-- Optional: Style the map container -->
     <style>
         #map {
@@ -34,14 +31,15 @@
                 center: mapCenter,
                 zoom: 4.8 // Adjust the zoom level
             });
-            const image =
-    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-  const beachMarker = new google.maps.Marker({
-    position: { lat: 46.081428, lng: 13.466920 },
-    map, map,
-    icon: image
-        });
-}
+
+            // Create a marker with a custom icon
+            const image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+            const marker = new google.maps.Marker({
+                position: { lat: 46.081428, lng: 13.466920 },
+                map: map,
+                icon: image
+            });
+
             // Add a popup when the marker is clicked
             var infowindow = new google.maps.InfoWindow({
                 content: "<b>Ciao Rebecca!</b><br>Hi Rebecca! This is where Ronchi di Cialla is. You are cute :)"
@@ -51,7 +49,6 @@
                 infowindow.open(map, marker);
             });
         }
-
     </script>
 
 </body>
