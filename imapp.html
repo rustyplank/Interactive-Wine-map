@@ -6,7 +6,10 @@
     <title>Interactive Map Example</title>
 
     <!-- Add the Google Maps API script with your API key -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXFtb0x2bhTvxKascBagjUMDDSowPyj8s&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    <!-- Add your Font Awesome kit script -->
+    <script src="https://kit.fontawesome.com/d7b8e88c28.js" crossorigin="anonymous"></script>
 
     <!-- Optional: Style the map container -->
     <style>
@@ -32,32 +35,10 @@
                 zoom: 4.8 // Adjust the zoom level
             });
 
-            // Define a custom icon (wine glass)
-            var customIcon = {
-                url: 'https://www.iconsdb.com/icons/preview/red/wine-glass-xxl.png', // Wine glass icon
-                size: new google.maps.Size(300, 300), // Adjust the size of the icon
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(100, 200)
-            };
-
-            // Add a marker over Cividale del Friuli
+            // Create a custom marker with Font Awesome wine bottle icon
             var marker = new google.maps.Marker({
                 position: { lat: 46.081428, lng: 13.466920 }, // Cividale del Friuli coordinates
                 map: map,
                 title: 'Ciao Rebecca!',
-                icon: customIcon // Set the custom icon
-            });
-
-            // Add a popup when the marker is clicked
-            var infowindow = new google.maps.InfoWindow({
-                content: "<b>Ciao Rebecca!</b><br>Hi Rebecca! This is where Ronchi di Cialla is. You are cute :)"
-            });
-
-            marker.addListener('click', function() {
-                infowindow.open(map, marker);
-            });
-        }
-    </script>
-
-</body>
-</html>
+                icon: {
+                    url: 'data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" vie
