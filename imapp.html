@@ -41,4 +41,22 @@
                 map: map,
                 title: 'Ciao Rebecca!',
                 icon: {
-                    url: 'data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" vie
+                    url: 'data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M8 0v2h3v12h2V2h3V0H8zM2 4v20h18V4H2z"/></svg>',
+                    scaledSize: new google.maps.Size(30, 30) // Adjust the size of the icon
+                }
+            });
+
+            // Add a popup when the marker is clicked
+            var infowindow = new google.maps.InfoWindow({
+                content: "<b>Ciao Rebecca!</b><br>Hi Rebecca! This is where Ronchi di Cialla is. You are cute :)"
+            });
+
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+        }
+    </script>
+
+</body>
+</html>
+
