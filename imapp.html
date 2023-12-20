@@ -6,7 +6,7 @@
     <title>Interactive Map Example</title>
 
     <!-- Add the Google Maps API script with your API key -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXFtb0x2bhTvxKascBagjUMDDSowPyj8s&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
     <!-- Optional: Style the map container -->
     <style>
@@ -35,7 +35,9 @@
             // Define a custom icon (wine glass)
             var customIcon = {
                 url: 'https://www.iconsdb.com/icons/preview/red/wine-glass-xxl.png', // Wine glass icon
-                scaledSize: new google.maps.Size(50, 50), // Adjust the size of the icon
+                size: new google.maps.Size(50, 50), // Adjust the size of the icon
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(25, 50)
             };
 
             // Add a marker over Cividale del Friuli
