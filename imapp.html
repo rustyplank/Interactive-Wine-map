@@ -41,8 +41,8 @@
                 map: map,
                 title: 'Ciao Rebecca!',
                 icon: {
-                    <i class="fa-solid fa-wine-bottle"></i>
-            
+                    url: getIconDataUrl(),
+                    scaledSize: new google.maps.Size(30, 30) // Adjust the size of the icon
                 }
             });
 
@@ -54,6 +54,15 @@
             marker.addListener('click', function() {
                 infowindow.open(map, marker);
             });
+        }
+
+        function getIconDataUrl() {
+            var icon = document.createElement("i");
+            icon.className = "fa-solid fa-wine-bottle";
+
+            // Create a data URL from the SVG
+            var svgString = new XMLSerializer().serializeToString(icon);
+            return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgString);
         }
     </script>
 
