@@ -9,7 +9,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXFtb0x2bhTvxKascBagjUMDDSowPyj8s&callback=initMap" async defer></script>
 
     <!-- Add your Font Awesome kit script -->
-    <script src="https://kit.fontawesome.com/d7b8e88c28.js" crossorigin="anonymous"></script>
+ 
 
     <!-- Optional: Style the map container -->
     <style>
@@ -34,18 +34,14 @@
                 center: mapCenter,
                 zoom: 4.8 // Adjust the zoom level
             });
-
-            // Create a custom marker with Font Awesome wine bottle icon
-            var marker = new google.maps.Marker({
-                position: { lat: 46.081428, lng: 13.466920 }, // Cividale del Friuli coordinates
-                map: map,
-                title: 'Ciao Rebecca!',
-                icon: {
-                    url: getIconDataUrl(),
-                    scaledSize: new google.maps.Size(30, 30) // Adjust the size of the icon
-                }
-            });
-
+            const image =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+  const beachMarker = new google.maps.Marker({
+    position: { lat: 46.081428, lng: 13.466920 },
+    map, map,
+    icon: image
+        });
+}
             // Add a popup when the marker is clicked
             var infowindow = new google.maps.InfoWindow({
                 content: "<b>Ciao Rebecca!</b><br>Hi Rebecca! This is where Ronchi di Cialla is. You are cute :)"
@@ -56,14 +52,6 @@
             });
         }
 
-        function getIconDataUrl() {
-            var icon = document.createElement("i");
-            icon.className = "fa-solid fa-wine-bottle";
-
-            // Create a data URL from the SVG
-            var svgString = new XMLSerializer().serializeToString(icon);
-            return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgString);
-        }
     </script>
 
 </body>
