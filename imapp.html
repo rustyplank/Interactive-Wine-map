@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Map Example</title>
 
-    <!-- Leaflet CSS and JavaScript -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
     <!-- Add the Google Maps API script with your API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
@@ -28,14 +24,29 @@
     <!-- Initialize the map with JavaScript -->
     <script>
         function initMap() {
-              var mapCenter = { lat: 42.6929626, lng: 12.3310166 }; // Center the map over italy
+            var mapCenter = { lat: 42.6929626, lng: 12.3310166 }; // Center the map over Italy
+
+            // Create a new Google Map centered on the specified coordinates
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: mapCenter,
+                zoom: 5.88 // Adjust the zoom level
+            });
 
             // Add a marker over Cividale del Friuli
-            var marker = L.marker([46.3664, 13.4321]) // Cividale del Friuli coordinates
-                .bindPopup("<b>Cividale del Friuli</b><br>Beautiful city in Italy.<br>Great wine is made here.")
-                .addTo(map);
+            var marker = new google.maps.Marker({
+                position: { lat: 46.3664, lng: 13.4321 }, // Cividale del Friuli coordinates
+                map: map,
+                title: 'Cividale del Friuli'
+            });
 
-            // Optionally, you can add other features or customize the map here.
+            // Add a popup when the marker is clicked
+            var infowindow = new google.maps.InfoWindow({
+                content: "<b>Cividale del Friuli</b><br>Beautiful city in Italy.<br>Great wine is made here."
+            });
+
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
         }
     </script>
 
