@@ -35,7 +35,7 @@
             // Create a marker with a custom icon
             const image = {
                 url: "https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Drinks-PNG-/Wine_Bottle_and_Glass_PNG_Vector_Clipart.png?m=1434423301",
-                scaledSize: new google.maps.Size(30, 30) // Adjust the size of the icon 
+                scaledSize: new google.maps.Size(100, 100) // Adjust the size of the icon 
             }
             const marker = new google.maps.Marker({
                 position: { lat: 46.081428, lng: 13.466920 },
@@ -54,7 +54,16 @@
         }
     </script>
 
-    <div>
+            <style>
+                /* CSS styles for the div with the class centered-text */
+                .centered-text {
+                    text-align: center;
+                    font-size: 100px;
+                    margin-top: 75vh;
+                }
+            </style>
+
+    <div class="centered-text">
         Ciao Rebecca! You are cute.
     </div>
 
