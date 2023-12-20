@@ -29,7 +29,7 @@
             // Create a new Google Map centered on the specified coordinates
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: mapCenter,
-                zoom: 5.88 // Adjust the zoom level
+                zoom: 4 // Adjust the zoom level
             });
 
             // Add a marker over Cividale del Friuli
@@ -41,7 +41,7 @@
 
             // Add a popup when the marker is clicked
             var infowindow = new google.maps.InfoWindow({
-                content: "<b>Cividale del Friuli</b><br>Hi Rebecca! Ronchi di Cialla is here."
+                content: "<b>Ciao Rebecca!</b><br>Hi Rebecca! This is where Ronchi di Cialla is."
             });
 
             marker.addListener('click', function() {
