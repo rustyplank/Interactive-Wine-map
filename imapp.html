@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map Example</title>
+
+    <!-- Leaflet CSS and JavaScript -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Add the Google Maps API script with your API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXFtb0x2bhTvxKascBagjUMDDSowPyj8s&callback=initMap" async defer></script>
+
+    <!-- Optional: Style the map container -->
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Create a container for the map -->
+    <div id="map"></div>
+
+    <!-- Initialize the map with JavaScript -->
+    <script>
+        function initMap() {
+        // Specify the center point coordinates (replace with your desired coordinates)
+        var mapCenter = { lat: 42.6929626, lng: 12.3310166 };
+
+        // Create a new Google Map centered on the specified coordinates
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: mapCenter,
+            zoom: 5.88 // Adjust the zoom level
+        });
+    }
+        function initMap() {
+            // Load GeoJSON data and create a Leaflet map
+            fetch('country.geojson')
+                .then(response => response.json())
+                .then(geojson => {
+                    var map = L.map('map').fitBounds(L.geoJSON(geojson).getBounds());
+
+                    // Add GeoJSON layer to the map
+                    L.geoJSON(geojson).addTo(map);
+
+                    // Add a marker over Cividale del Friuli
+                    var marker = L.marker([46.3664, 13.4321]) // Cividale del Friuli coordinates
+                        .bindPopup("<b>Cividale del Friuli</b><br>Beautiful city in Italy.")
+                        .addTo(map);
+                });
+        }
+    </script>
+
+</body>
+</html>
