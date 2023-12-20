@@ -35,7 +35,7 @@
             // Create a marker with a custom icon
             const image = {
                 url: "https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Drinks-PNG-/Wine_Bottle_and_Glass_PNG_Vector_Clipart.png?m=1434423301",
-                scaledSize: new google.maps.Size(100, 100) // Adjust the size of the icon 
+                scaledSize: new google.maps.Size(85, 85) // Adjust the size of the icon 
             }
             const marker = new google.maps.Marker({
                 position: { lat: 46.081428, lng: 13.466920 },
@@ -45,7 +45,7 @@
 
             // Add a popup when the marker is clicked
             var infowindow = new google.maps.InfoWindow({
-                content: "<b>Ciao Rebecca!</b><br>Hi Rebecca! This is where Ronchi di Cialla is. You are cute :)"
+                content: "<b>Cialla!</b><br> This is where the winery called Ronchi di Cialla is. It is home to a native grape of the Friuli Venezia Giulia region called the Schioppettino."
             });
 
             marker.addListener('click', function() {
@@ -64,7 +64,10 @@
             </style>
 
     <div class="centered-text">
-        Ciao Rebecca! You are cute.
+        Hi Rebecca! You are cute.
+    </div>
+    <div>
+        Clicca sulla botiglia di vino per saperne di più.
     </div>
 
 </body>
