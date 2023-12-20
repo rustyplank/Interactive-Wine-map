@@ -32,24 +32,19 @@
                 zoom: 4.8 // Adjust the zoom level
             });
 
-    
-
-             // Define a custom icon (wine glass)
+            // Define a custom icon (wine glass)
             var customIcon = {
                 url: 'https://www.iconsdb.com/icons/preview/red/wine-glass-xxl.png', // Wine glass icon
                 scaledSize: new google.maps.Size(50, 50), // Adjust the size of the icon
             };
 
-
             // Add a marker over Cividale del Friuli
             var marker = new google.maps.Marker({
                 position: { lat: 46.081428, lng: 13.466920 }, // Cividale del Friuli coordinates
                 map: map,
-                title: 'Ciao Rebecca!'
+                title: 'Ciao Rebecca!',
                 icon: customIcon // Set the custom icon
             });
-
-        
 
             // Add a popup when the marker is clicked
             var infowindow = new google.maps.InfoWindow({
