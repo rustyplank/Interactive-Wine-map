@@ -28,16 +28,7 @@
 
     <!-- Initialize the map with JavaScript -->
     <script>
-        function initMap() {
-        // Specify the center point coordinates (replace with your desired coordinates)
-        var mapCenter = { lat: 42.6929626, lng: 12.3310166 };
-
-        // Create a new Google Map centered on the specified coordinates
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: mapCenter,
-            zoom: 5.88 // Adjust the zoom level
-        });
-    }
+        
         function initMap() {
             // Load GeoJSON data and create a Leaflet map
             fetch('country.geojson')
