@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map Example</title>
+
+    <!-- Add the Google Maps API script with your API key -->
+
+    <!-- Optional: Style the map container -->
+    <style>
+        #map {
+            height: 450px;
+            width: 100%;
+        }
+        .button-container {
+        text-align: center;
+        margin-top: 10px; /* Adjust the margin as needed */
+
+
+        }
+
+        .button-container button {
+        padding: 25px 50px; /* 5x as big */
+        font-size: 24px; /* Font size */
+        cursor: pointer;
+        background-color: #ffd700; /* Yellow background color */
+        color: #000; /* Text color */
+        border: none;
+        border-radius: 5px;
+        font-family: 'Star Jedi', sans-serif; /* Star Wars-themed font */
+    }
+
+    .button-container button:hover {
+        background-color: #ffcc00; /* Hover color */
+    }
+
+    </style>
+
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="goBack()">Home</button>
+
+        <script>
+            function goBack() {
+                window.location.href = "{{ url_for('home') }}"; // Use the appropriate URL for the home route
+            }
+        </script>
+    </div>
+    <div style="height: 20px;"></div>
+
+    <!-- Create a container for the map -->
+    <div id="map"></div>
+
+    <!-- Initialize the map with JavaScript -->
+    <script>
+        function initMap() {
+            var mapCenter = { lat: 42.6929626, lng: 12.3310166 }; // Center the map over Italy
+
+            // Create a new Google Map centered on the specified coordinates
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: mapCenter,
+                zoom: 4.8 // Adjust the zoom level
+            });
+
+            // Create a marker with a custom icon
+            const image = {
+                url: "https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Drinks-PNG-/Wine_Bottle_and_Glass_PNG_Vector_Clipart.png?m=1434423301",
+                scaledSize: new google.maps.Size(75, 75) // Adjust the size of the icon
+            }
+            const marker = new google.maps.Marker({
+                position: { lat: 46.081428, lng: 13.466920 },
+                map: map,
+                icon: image
+            });
+              const markera = new google.maps.Marker({
+                position: { lat: 44.183444, lng: 9.584116 },
+                map: map,
+                icon: image
+            });
+
+            // Add a popup when the marker is clicked
+            var infowindow = new google.maps.InfoWindow({
+                content: "<b>Cialla!</b><br> This is where the winery called Ronchi di Cialla is. It is home to a native grape of the Friuli Venezia Giulia region called the Schioppettino."
+            });
+
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+
+          // Add a popup2 when the marker is clicked
+            var infowindowa = new google.maps.InfoWindow({
+                content: "<b>Bonassola!</b><br> This is where the wine made with the rare and native grape of 'Ruzzese' is made."
+            });
+
+            markera.addListener('click', function() {
+                infowindowa.open(map, markera);
+            });
+        }
+    </script>
+
+            <style>
+                /* CSS styles for the div with the class centered-text */
+                .centered-text {
+                    text-align: center;
+                    font-size: 75px;
+
+                }
+                .whatever {
+                    font-size: 25px;
+                }
+            </style>
+
+    <div class="centered-text">
+        Welcome to my interactive map of rare Italian wines!
+    </div>
+    <div class="whatever" style="text-align: center">
+        <span style="color: red;">Click on a wine bottle to learn more!</span>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXFtb0x2bhTvxKascBagjUMDDSowPyj8s&callback=initMap" async defer></script>
+
+
+</body>
+</html>

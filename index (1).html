@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rusty Plank's CS50 Project</title>
+
+    <!-- Link to a Star Wars-themed CSS or add your own styles -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.imgur.com/unWyniy.png') no-repeat center center fixed;
+            background-size: 30% 70%;
+            color: #fff;
+        }
+
+        header {
+            background-color: #000;
+            color: #ffe81f;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #000;
+            color: #ffe81f;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffe81f;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rusty Plank's CS50 Project</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="{{ url_for('imapp') }}">Interactive Map</a>
+    </nav>
+
+    <main>
+        <!-- The content of your main page goes here -->
+        <p>Welcome to Rusty Plank's CS50 Project!</p>
+    </main>
+
+</body>
+</html>
